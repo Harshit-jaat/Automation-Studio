@@ -8,19 +8,20 @@ const UPLOADS_DIR = path.join(__dirname, "../uploads");
 
 function getADBPath() {
   const platform = os.platform();
-  const isDev = !process.resourcesPath || process.resourcesPath === process.cwd();
-  const basePath = isDev ? __dirname : process.resourcesPath;
+  const isPackaged = process.mainModule?.filename.includes("app.asar");
+  const basePath = isPackaged ? process.resourcesPath : path.join(__dirname, "..");
 
   if (platform === "win32") {
-    return path.join(basePath, "bin/win/platform-tools/adb.exe");
+    return path.join(basePath, "bin", "win", "platform-tools", "adb.exe");
   } else if (platform === "darwin") {
-    return path.join(basePath, "bin/mac/platform-tools/adb");
+    return path.join(basePath, "bin", "mac", "platform-tools", "adb");
   } else if (platform === "linux") {
-    return path.join(basePath, "bin/linux/platform-tools/adb");
+    return path.join(basePath, "bin", "linux", "platform-tools", "adb");
   } else {
     throw new Error("Unsupported platform for ADB");
   }
 }
+
 
 
 function getLatestAPK() {
