@@ -9,7 +9,7 @@
     "frontend": "cd frontend && npm start",
     "electron": "electron electron/main.js",
     "backend": "node backend/server.js",
-    "build": "electron-builder"
+    "build": "electron-builder --publish always"
   },
   "dependencies": {
     "adb": "^0.2.0",
@@ -109,8 +109,7 @@
       "owner": "Harshit-jaat",
       "repo": "Automation-Studio"
     }
-  ],
-  "publishPolicy": "always"
+  ]
 }
 
 }
