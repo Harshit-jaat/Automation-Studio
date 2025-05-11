@@ -1,0 +1,138 @@
+.container {
+  background-color: #f8f9fc;
+  min-height: 100vh;
+  width: 98vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;    
+  justify-content: center; 
+}
+
+
+
+.backButton {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  min-width: fit-content;
+}
+
+.backButton:hover {
+  background-color: #2c80b4;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1; /* THIS MAKES IT TAKE REMAINING SPACE */
+  padding: 30px;
+}
+
+.selector {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.runBtn {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.runBtn:hover {
+  background-color: #27ae60;
+}
+
+.stopBtn {
+  background-color: #e67e22;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stopBtn:hover {
+  background-color: #ca6f1e;
+}
+
+.logs {
+  flex: 2;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.logsHeader {
+  font-weight: 500;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 24px;
+
+}
+
+.clearBtn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  min-width: 10px;
+  align-self: self-end;
+}
+
+.clearBtn:hover {
+  background-color: #c0392b;
+}
+
+.logsBox {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 6px;
+  flex-grow: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 13px;
+  color: #333;
+}

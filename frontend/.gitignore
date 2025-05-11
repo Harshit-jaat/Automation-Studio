@@ -1,0 +1,20 @@
+# Frontend
+frontend/node_modules/
+frontend/build/
+
+# Backend
+backend/node_modules/
+
+# Electron Binaries & Output
+electron/bin/
+dist/
+*.dmg
+*.exe
+*.AppImage
+*.zip
+
+# Uploads or Generated Data
+uploads/
+
+# Logs & misc
+*.log

@@ -21,8 +21,25 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Dependencies
+      - name: Install Root Dependencies
         run: npm install
+
+      - name: Install Frontend Dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Build Frontend (React)
+        working-directory: frontend
+        run: npm run build
+
+      - name: Install Backend Dependencies
+        working-directory: backend
+        run: npm install 
+
+      - name: Download binaries (Node, ADB, etc.)
+        run: |
+          curl -L https://github.com/Harshit-jaat/Automation-Studio/releases/download/v-1.0.0/bin.zip -o bin.zip
+          unzip binaries.zip -d electron/
 
       - name: Build and Publish App
         env:

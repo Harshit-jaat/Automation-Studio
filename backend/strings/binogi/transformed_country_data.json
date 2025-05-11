@@ -1,0 +1,1879 @@
+{
+  "Sweden": {
+    "country": "Sweden",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Grundskola",
+        "grades": [
+          "4-6",
+          "7-9",
+          "1-3"
+        ]
+      },
+      {
+        "title": "Gymnasiet",
+        "grades": [
+          "10-13"
+        ]
+      },
+      {
+        "title": "Komvux",
+        "grades": [
+          "14"
+        ]
+      }
+    ]
+  },
+  "Germany": {
+    "country": "Germany",
+    "region": {
+      "Nordrhein-Westfalen": {
+        "schoolTypes": [
+          {
+            "title": "Hauptschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Realschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Sekundarschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Bayern": {
+        "schoolTypes": [
+          {
+            "title": "Mittelschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Realschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Niedersachsen": {
+        "schoolTypes": [
+          {
+            "title": "Hauptschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Realschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Oberschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Integrierte Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Kooperative Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          }
+        ]
+      },
+      "Baden-Württemberg": {
+        "schoolTypes": [
+          {
+            "title": "Hauptschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Realschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Werkrealschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Bremen": {
+        "schoolTypes": [
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Oberschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Rheinland-Pfalz": {
+        "schoolTypes": [
+          {
+            "title": "Realschule Plus",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Integrierte Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Saarland": {
+        "schoolTypes": [
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          }
+        ]
+      },
+      "Sachsen": {
+        "schoolTypes": [
+          {
+            "title": "Oberschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Sachsen-Anhalt": {
+        "schoolTypes": [
+          {
+            "title": "Sekundarschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Integrative Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Kooperative Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Berlin": {
+        "schoolTypes": [
+          {
+            "title": "Grundschule",
+            "grades": [
+              "5. KLASSE",
+              "6. KLASSE"
+            ]
+          },
+          {
+            "title": "Integrierte Sekundarschule (ISS)",
+            "grades": [
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. KLASSE",
+              "6. KLASSE",
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          },
+          {
+            "title": "Schule mit sonderpädagogischem Förderschwerpunkt (Förderschule)",
+            "grades": [
+              "5. KLASSE",
+              "6. KLASSE",
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          }
+        ]
+      },
+      "Mecklenburg-Vorpommern": {
+        "schoolTypes": [
+          {
+            "title": "schulartenunabhängige Orientierungsstufe",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse"
+            ]
+          },
+          {
+            "title": "Regionale Schule",
+            "grades": [
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Integrative Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Kooperative Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Schleswig-Holstein": {
+        "schoolTypes": [
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          }
+        ]
+      },
+      "Hamburg": {
+        "schoolTypes": [
+          {
+            "title": "Stadtteilschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Hessen": {
+        "schoolTypes": [
+          {
+            "title": "Hauptschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Realschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          },
+          {
+            "title": "Gesamtschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse",
+              "10. Klasse"
+            ]
+          }
+        ]
+      },
+      "Thüringen": {
+        "schoolTypes": [
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "5. Klasse",
+              "6. Klasse",
+              "7. Klasse",
+              "8. Klasse",
+              "9. Klasse"
+            ]
+          }
+        ]
+      },
+      "Brandenburg": {
+        "schoolTypes": [
+          {
+            "title": "Grundschule",
+            "grades": [
+              "5. KLASSE",
+              "6. KLASSE"
+            ]
+          },
+          {
+            "title": "Integrierte Sekundarschule (ISS)",
+            "grades": [
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          },
+          {
+            "title": "Gymnasium",
+            "grades": [
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          },
+          {
+            "title": "Gemeinschaftsschule",
+            "grades": [
+              "5. KLASSE",
+              "6. KLASSE",
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          },
+          {
+            "title": "Schule mit sonderpädagogischem Förderschwerpunkt (Förderschule)",
+            "grades": [
+              "5. KLASSE",
+              "6. KLASSE",
+              "7. KLASSE",
+              "8. KLASSE",
+              "9. KLASSE",
+              "10. KLASSE"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Canada": {
+    "country": "Canada",
+    "region": {
+      "Nova Scotia ": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6"
+            ]
+          },
+          {
+            "title": "Junior High",
+            "grades": [
+              "Grade 7",
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Ontario": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6",
+              "Grade 7",
+              "Grade 8"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "New Brunswick": {
+        "schoolTypes": [
+          {
+            "title": "Middle",
+            "grades": [
+              "Grade 6",
+              "Grade 7",
+              "Grade 8"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Newfoundland and Labrador": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6"
+            ]
+          },
+          {
+            "title": "Middle/Intermediate",
+            "grades": [
+              "Grade 7",
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Prince Edward Island": {
+        "schoolTypes": [
+          {
+            "title": "Elementary ",
+            "grades": [
+              "Grade 6"
+            ]
+          },
+          {
+            "title": "Intermediate/Middle",
+            "grades": [
+              "Grade 7",
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Alberta": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6"
+            ]
+          },
+          {
+            "title": "Junior High",
+            "grades": [
+              "Grade 7",
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "British Columbia": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6",
+              "Grade 7"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Manitoba": {
+        "schoolTypes": [
+          {
+            "title": "Middle",
+            "grades": [
+              "Grade 6",
+              "Grade 7",
+              "Grade 8"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Saskatchewan": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6",
+              "Grade 7",
+              "Grade 8"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Quebec": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 5",
+              "Grade 6"
+            ]
+          },
+          {
+            "title": "Secondary ",
+            "grades": [
+              "Grade 7",
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Nunavut": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6",
+              "Grade 7",
+              "Grade 8"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Northwest Territories": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 7",
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Yukon": {
+        "schoolTypes": [
+          {
+            "title": "Elementary",
+            "grades": [
+              "Grade 6",
+              "Grade 7"
+            ]
+          },
+          {
+            "title": "Secondary",
+            "grades": [
+              "Grade 8",
+              "Grade 9"
+            ]
+          }
+        ]
+      },
+      "Other (VA)": {
+        "schoolTypes": [
+          {
+            "title": "Middle ",
+            "grades": [
+              "Grades 6-8"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Finland": {
+    "country": "Finland",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Grundskola (Peruskoulu)",
+        "grades": [
+          "4-6",
+          "7-9"
+        ]
+      }
+    ]
+  },
+  "India": {
+    "country": "India",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Lower Primary School",
+        "grades": [
+          "4",
+          "5"
+        ]
+      },
+      {
+        "title": "Upper Primary School",
+        "grades": [
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      {
+        "title": "Lower Secondary School",
+        "grades": [
+          "9"
+        ]
+      },
+      {
+        "title": "Senior Secondary School",
+        "grades": []
+      }
+    ]
+  },
+  "Kenya": {
+    "country": "Kenya",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary Education",
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      {
+        "title": "Secondary Education",
+        "grades": [
+          "Form 1",
+          "Form 2",
+          "Form 3",
+          "Form 4"
+        ]
+      }
+    ]
+  },
+  "Mexico": {
+    "country": "Mexico",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primaria",
+        "grades": [
+          "4",
+          "5",
+          "6"
+        ]
+      },
+      {
+        "title": "Secundaria",
+        "grades": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "title": "Preparatoria",
+        "grades": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    ]
+  },
+  "Syrian Arab Republic": {
+    "country": "Syrian Arab Republic",
+    "region": "N/A",
+    "schoolTypes": []
+  },
+  "Turkey": {
+    "country": "Turkey",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary School ",
+        "grades": [
+          "3",
+          "4"
+        ]
+      },
+      {
+        "title": "Secondary School",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      {
+        "title": "Highschool",
+        "grades": [
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "South Africa": {
+    "country": "South Africa",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary school",
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      {
+        "title": "High school",
+        "grades": [
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "New Zealand": {
+    "country": "New Zealand",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Full Primary",
+        "grades": [
+          "Year 4",
+          "Year 5",
+          "Year 6",
+          "Year 7",
+          "Year 8"
+        ]
+      },
+      {
+        "title": "Secondary",
+        "grades": [
+          "Year 9",
+          "Year 10",
+          "Year 11",
+          "Year 12",
+          "Year 13"
+        ]
+      }
+    ]
+  },
+  "Ireland": {
+    "country": "Ireland",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Junior Cycle",
+        "grades": [
+          "Year 1",
+          "Year 2",
+          "Year 3"
+        ]
+      },
+      {
+        "title": "Transition year",
+        "grades": [
+          "Year 4"
+        ]
+      },
+      {
+        "title": "Senior Cycle",
+        "grades": [
+          "Year 5",
+          "Year 6"
+        ]
+      }
+    ]
+  },
+  "United Kingdom": {
+    "country": "United Kingdom",
+    "region": {
+      "England": {
+        "schoolTypes": [
+          {
+            "title": "Key stage 2",
+            "grades": [
+              "Year 4",
+              "Year 5",
+              "Year 6"
+            ]
+          },
+          {
+            "title": "Key stage 3",
+            "grades": [
+              "Year 7",
+              "Year  8",
+              "Year  9"
+            ]
+          },
+          {
+            "title": "Key stage 4",
+            "grades": [
+              "Year  10",
+              "Year  11"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Namibia": {
+    "country": "Namibia",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary school",
+        "grades": [
+          "Grade 4",
+          "Grade 5",
+          "Grade 6",
+          "Grade 7"
+        ]
+      },
+      {
+        "title": "Lower secondary",
+        "grades": [
+          "Grade 8",
+          "Grade 9",
+          "Grade 10"
+        ]
+      },
+      {
+        "title": "Upper secondary",
+        "grades": [
+          "Grade 11",
+          "Grade 12"
+        ]
+      }
+    ]
+  },
+  "Singapore": {
+    "country": "Singapore",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary school",
+        "grades": [
+          "Primary 1",
+          "Primary 2",
+          "Primary 3",
+          "Primary 4",
+          "Primary 5",
+          "Primary 6"
+        ]
+      },
+      {
+        "title": "Secondary school",
+        "grades": [
+          "Secondary 1",
+          "Secondary 2",
+          "Secondary 3",
+          "Secondary 4",
+          "Secondary 5",
+          "Secondary 6"
+        ]
+      }
+    ]
+  },
+  "Netherlands": {
+    "country": "Netherlands",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary school",
+        "grades": [
+          "Groep 2",
+          "Groep 3",
+          "Groep 4",
+          "Groep 5",
+          "Groep 6",
+          "Groep 7",
+          "Groep 8"
+        ]
+      },
+      {
+        "title": "Secondary VMBO",
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "title": "Secondary HAVO",
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "title": "Secondary VWO",
+        "grades": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ]
+      }
+    ]
+  },
+  "France": {
+    "country": "France",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "L’École Primaire",
+        "grades": [
+          "C.P.",
+          "C.E. 1",
+          "C.E. 2",
+          "C.M. 1",
+          "C.M. 2"
+        ]
+      },
+      {
+        "title": "L’Enseignement Secondaire",
+        "grades": [
+          "6ème",
+          "5ème",
+          "4ème",
+          "3ème",
+          "2ème",
+          "1ème"
+        ]
+      },
+      {
+        "title": "L'ecole solution de contournement",
+        "grades": [
+          "Grade 4",
+          "Grade 5",
+          "Grade 6",
+          "Grade 7",
+          "Grade 8",
+          "Grade 9"
+        ]
+      }
+    ]
+  },
+  "Mozambique": {
+    "country": "Mozambique",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary",
+        "grades": [
+          "Grade 4",
+          "Grade 5"
+        ]
+      },
+      {
+        "title": "Upper primary",
+        "grades": [
+          "Grade 6",
+          "Grade 7"
+        ]
+      },
+      {
+        "title": "Secondary",
+        "grades": [
+          "Grade 8",
+          "Grade 9",
+          "Grade 10",
+          "Grade 11",
+          "Grade 12"
+        ]
+      }
+    ]
+  },
+  "Indonesia": {
+    "country": "Indonesia",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary School",
+        "grades": [
+          "Grade 1",
+          "Grade 2",
+          "Grade 3",
+          "Grade 4",
+          "Grade 5",
+          "Grade 6"
+        ]
+      },
+      {
+        "title": "Middle School",
+        "grades": [
+          "Grade 7",
+          "Grade 8",
+          "Grade 9"
+        ]
+      },
+      {
+        "title": "High School",
+        "grades": [
+          "Grade 10",
+          "Grade 11",
+          "Grade 12"
+        ]
+      }
+    ]
+  },
+  "Nigeria": {
+    "country": "Nigeria",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary school",
+        "grades": [
+          "Primary 4",
+          "Primary 5",
+          "Primary 6"
+        ]
+      },
+      {
+        "title": "Junior Secondary",
+        "grades": [
+          "JSS 1",
+          "JSS 2",
+          "JSS 3"
+        ]
+      },
+      {
+        "title": "Senior Secondary",
+        "grades": [
+          "SSS 1",
+          "SSS 2",
+          "SSS 3"
+        ]
+      }
+    ]
+  },
+  "Austria": {
+    "country": "Austria",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Mittelschule",
+        "grades": [
+          "5. Klasse",
+          "6. Klasse",
+          "7. Klasse",
+          "8. Klasse"
+        ]
+      },
+      {
+        "title": "Allgemeinbildende höhere Schule (AHS)",
+        "grades": [
+          "5. Klasse",
+          "6. Klasse",
+          "7. Klasse",
+          "8. Klasse",
+          "9. Klasse",
+          "10. Klasse"
+        ]
+      }
+    ]
+  },
+  "Ukraine": {
+    "country": "Ukraine",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Початкова школа",
+        "grades": [
+          "1 клас",
+          "2 клас",
+          "3 клас",
+          "4 клас"
+        ]
+      },
+      {
+        "title": "Середня школа",
+        "grades": [
+          "5 клас",
+          "6 клас",
+          "7 клас",
+          "8 клас",
+          "9 клас"
+        ]
+      },
+      {
+        "title": "Вища середня школа",
+        "grades": [
+          "10 клас",
+          "11 клас",
+          "12 клас"
+        ]
+      }
+    ]
+  },
+  "Somalia": {
+    "country": "Somalia",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary School",
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ]
+      },
+      {
+        "title": "Secondary School",
+        "grades": [
+          "Form 1",
+          "Form 2",
+          "Form 3",
+          "Form 4"
+        ]
+      }
+    ]
+  },
+  "Tanzania": {
+    "country": "Tanzania",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary School",
+        "grades": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      {
+        "title": "O' Level Secondary School",
+        "grades": [
+          "O' Level 1",
+          "O' Level 2",
+          "O' Level 3",
+          "O' Level 4"
+        ]
+      },
+      {
+        "title": "A' Level Secondary School",
+        "grades": [
+          "A' Level 1",
+          "A' Level 2"
+        ]
+      }
+    ]
+  },
+  "United States": {
+    "country": "United States",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "Puerto Rico": {
+    "country": "Puerto Rico",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "American Samoa": {
+    "country": "American Samoa",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "Guam": {
+    "country": "Guam",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "Marshall Islands": {
+    "country": "Marshall Islands",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "Northern Mariana Islands": {
+    "country": "Northern Mariana Islands",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "Palau": {
+    "country": "Palau",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "U.S. Virgin Islans": {
+    "country": "U.S. Virgin Islans",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary school",
+        "grades": [
+          "4"
+        ]
+      },
+      {
+        "title": "Middle and High school",
+        "grades": [
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12"
+        ]
+      }
+    ]
+  },
+  "Cameroon": {
+    "country": "Cameroon",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Niveau Primaire",
+        "grades": [
+          "CE2",
+          "CM1",
+          "CM2"
+        ]
+      },
+      {
+        "title": "Niveau Secondaire",
+        "grades": [
+          "6ème",
+          "5ème",
+          "4ème",
+          "3ème",
+          "8ème",
+          "1ème",
+          "Tle"
+        ]
+      },
+      {
+        "title": "Primary Level",
+        "grades": [
+          "Class 4",
+          "Class 5",
+          "Class 6"
+        ]
+      },
+      {
+        "title": "Secondary Level",
+        "grades": [
+          "Form 1",
+          "Form 2",
+          "Form 3",
+          "Form 4",
+          "Form 5",
+          "Lower sixth",
+          "Upper sixth"
+        ]
+      }
+    ]
+  },
+  "Monaco": {
+    "country": "Monaco",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Elementary School",
+        "grades": [
+          "1-3",
+          "4-6"
+        ]
+      },
+      {
+        "title": "Middle School",
+        "grades": [
+          "7-9"
+        ]
+      },
+      {
+        "title": "High School",
+        "grades": [
+          "10-12"
+        ]
+      }
+    ]
+  },
+  "Spain": {
+    "country": "Spain",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primaria",
+        "grades": [
+          "1º ",
+          "2º ",
+          "3º ",
+          "4º ",
+          "5º ",
+          "6º "
+        ]
+      },
+      {
+        "title": "Secundaria",
+        "grades": [
+          "1º ",
+          "2º ",
+          "3º ",
+          "4º "
+        ]
+      },
+      {
+        "title": "Bachillerato",
+        "grades": [
+          "1º ",
+          "2º "
+        ]
+      }
+    ]
+  },
+  "Zambia": {
+    "country": "Zambia",
+    "region": "N/A",
+    "schoolTypes": [
+      {
+        "title": "Primary School",
+        "grades": [
+          "Grade 4",
+          "Grade 5",
+          "Grade 6",
+          "Grade 7"
+        ]
+      },
+      {
+        "title": "Junior Secondary School",
+        "grades": [
+          "Grade 8",
+          "Grade 9"
+        ]
+      }
+    ]
+  }
+}

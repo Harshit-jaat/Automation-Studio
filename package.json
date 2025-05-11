@@ -1,0 +1,115 @@
+{
+  "name": "automation-studio",
+  "version": "1.0.1",
+  "main": "electron/main.js",
+  "description": "Automation Studio Desktop App",
+  "author": "Harshit",
+  "scripts": {
+    "start": "concurrently \"npm run frontend\" \"npm run electron\"",
+    "frontend": "cd frontend && npm start",
+    "electron": "electron electron/main.js",
+    "backend": "node backend/server.js",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "adb": "^0.2.0",
+    "appium": "^2.18.0",
+    "axios": "^1.9.0",
+    "electron-updater": "^6.6.2",
+    "express": "^4.21.2",
+    "find-process": "^1.4.10",
+    "mime-types": "^3.0.1",
+    "multer": "^1.4.5-lts.1",
+    "webdriverio": "^9.12.0",
+    "websocket": "^1.0.35"
+  },
+  "devDependencies": {
+    "appium-uiautomator2-driver": "^4.2.3",
+    "concurrently": "^9.1.2",
+    "electron": "^30.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+  "appId": "com.testing.studio",
+  "productName": "Testing Studio",
+  "icon": "electron/assets/icon1.jpg",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "electron/main.js",
+    "frontend/build/**/*",
+    "electron/bin/**/*",
+    "!**/*.un~",
+    "!**/.git",
+    "!**/.DS_Store",
+    "!**/node_modules/parse-listing/**"
+  ],
+  "extraResources": [
+    {
+      "from": "backend",
+      "to": "backend"
+    },
+    {
+      "from": "backend/node_modules",
+      "to": "backend/node_modules"
+    },
+    {
+      "from": "frontend/build",
+      "to": "frontend"
+    },
+    {
+      "from": "electron/bin/mac/node/bin/node",
+      "to": "node/mac/bin/node"
+    },
+    {
+      "from": "electron/bin/win/node/node.exe",
+      "to": "node/win/node.exe"
+    },
+    {
+      "from": "electron/bin/linux/node/bin/node",
+      "to": "node/linux/bin/node"
+    },
+    {
+      "from": "electron/bin/mac/platform-tools",
+      "to": "bin/mac/platform-tools"
+    },
+    {
+      "from": "electron/bin/win/platform-tools",
+      "to": "bin/win/platform-tools"
+    },
+    {
+      "from": "electron/bin/linux/platform-tools",
+      "to": "bin/linux/platform-tools"
+    }
+  ],
+  "asar": true,
+  "mac": {
+    "target": [
+      "dmg"
+    ]
+  },
+  "win": {
+    "target": [
+      "nsis"
+    ]
+  },
+  "linux": {
+    "target": [
+      "AppImage"
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  },
+  "publish": [
+    {
+      "provider": "github",
+      "owner": "Harshit-jaat",
+      "repo": "Automation-Studio"
+    }
+  ]
+}
+
+}

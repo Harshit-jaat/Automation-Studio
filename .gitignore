@@ -1,0 +1,24 @@
+# Build and release outputs
+dist/
+*.dmg
+*.exe
+*.AppImage
+
+# Electron binaries
+electron/bin/**/node
+electron/bin/**/platform-tools/**
+
+# App uploads
+uploads/
+
+# Node modules (backend or nested)
+**/node_modules/
+frontend/node_modules/
+
+# Logs and misc
+*.log
+*.zip
+*.tar.gz
+
+
+package-lock.json
