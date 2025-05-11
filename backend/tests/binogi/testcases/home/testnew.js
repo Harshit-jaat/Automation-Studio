@@ -15,6 +15,7 @@ async function home_bottom_bar_clicks() {
     // await disablePlayStore();
 
   try {
+    await click("ALLOW",{delay: 10000 , print : true});
     await click(intro.letsgo,{ print : true});
     await click(role.student,{print:true});
     clickContinue();

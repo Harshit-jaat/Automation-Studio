@@ -1,6 +1,6 @@
 {
   "name": "automation-studio",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "main": "electron/main.js",
   "description": "Automation Studio Desktop App",
   "author": "Harshit",
@@ -72,15 +72,15 @@
     },
     {
       "from": "electron/bin/mac/platform-tools",
-      "to": "bin/mac/platform-tools"
+      "to": "backend/bin/mac/platform-tools"
     },
     {
       "from": "electron/bin/win/platform-tools",
-      "to": "bin/win/platform-tools"
+      "to": "backend/bin/win/platform-tools"
     },
     {
       "from": "electron/bin/linux/platform-tools",
-      "to": "bin/linux/platform-tools"
+      "to": "backend/bin/linux/platform-tools"
     }
   ],
   "asar": true,

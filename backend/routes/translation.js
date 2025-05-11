@@ -14,7 +14,7 @@ function findTranslations(textToFind) {
   const normalizedTextToFind = textToFind.trim().toLowerCase();
   const matchedKeys = [];
 
-  // Step 1: Find ALL matching keys
+
   function findKeys(obj, parentKey = "") {
     for (const key in obj) {
       const fullKey = parentKey ? `${parentKey}.${key}` : key;
@@ -35,7 +35,7 @@ function findTranslations(textToFind) {
     throw new Error(`❌ No matching keys found in English for text: "${textToFind}"`);
   }
 
-  // Step 2: For each matched key, fetch translations from all languages
+
   for (const key of matchedKeys) {
     const result = {};
 
@@ -53,7 +53,7 @@ function findTranslations(textToFind) {
     resultArray.push({ key, translations: result });
   }
 
-  return resultArray; // ✅ return multiple matches
+  return resultArray; 
 }
 
   
