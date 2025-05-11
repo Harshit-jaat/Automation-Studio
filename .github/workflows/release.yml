@@ -39,7 +39,7 @@ jobs:
       - name: Download binaries (Node, ADB, etc.)
         run: |
           curl -L https://github.com/Harshit-jaat/Automation-Studio/releases/download/v-1.0.0/bin.zip -o bin.zip
-          unzip binaries.zip -d electron/
+          unzip bin.zip -d electron/
 
       - name: Build and Publish App
         env:
