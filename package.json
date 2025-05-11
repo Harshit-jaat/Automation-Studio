@@ -85,9 +85,10 @@
   ],
   "asar": true,
   "mac": {
-    "target": [
-      "dmg"
-    ]
+  "target": "dmg",
+  "arch": [
+    "universal"
+  ]
   },
   "win": {
     "target": [
