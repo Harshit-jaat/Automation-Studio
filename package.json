@@ -32,7 +32,7 @@
   "build": {
   "appId": "com.testing.studio",
   "productName": "Testing Studio",
-  "icon": "electron/assets/icon1.jpg",
+  "icon": "electron/assets/icon.icns",
   "directories": {
     "output": "dist"
   },
@@ -109,7 +109,8 @@
       "owner": "Harshit-jaat",
       "repo": "Automation-Studio"
     }
-  ]
+  ],
+  "publishPolicy": "always"
 }
 
 }
