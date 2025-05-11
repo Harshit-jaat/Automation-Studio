@@ -223,12 +223,22 @@ app.on("before-quit", () => {
 
 
 autoUpdater.on("update-available", () => {
-  dialog.showMessageBox({
-    type: "info",
-    title: "Update Available",
-    message: "A new version is available. Downloading now...",
-  });
+  console.log("Downloading new update")
 });
+
+autoUpdater.on("download-progress", (progressObj) => {
+  const log_message = `📥 Downloaded ${progressObj.percent.toFixed(2)}% ` +
+                      `(${(progressObj.transferred / 1024 / 1024).toFixed(2)} MB / ` +
+                      `${(progressObj.total / 1024 / 1024).toFixed(2)} MB) ` +
+                      `- Speed: ${(progressObj.bytesPerSecond / 1024).toFixed(2)} KB/s`;
+
+  console.log(log_message);
+
+  if (mainWindow && mainWindow.webContents) {
+    mainWindow.webContents.send("update-download-progress", progressObj);
+  }
+});
+
 
 autoUpdater.on("update-downloaded", () => {
   dialog.showMessageBox({
