@@ -7,7 +7,7 @@ const mime = require("mime-types");
 const axios = require("axios");
 const logFile = path.join(app.getPath("userData"), "backend.log");
 const { autoUpdater } = require("electron-updater");
-const { dialog } = require("electron");
+
 
 
 
