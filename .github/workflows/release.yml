@@ -22,11 +22,11 @@ jobs:
           node-version: '18'
 
       - name: Install Root Dependencies
-        run: CI='' npm install
+        run:  npm install
 
       - name: Install Frontend Dependencies
         working-directory: frontend
-        run: CI='' npm install
+        run: npm install
 
       - name: Build Frontend (React)
         working-directory: frontend
@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Backend Dependencies
         working-directory: backend
-        run: CI='' npm install 
+        run:  npm install 
 
       - name: Download binaries (Node, ADB, etc.)
         run: |
