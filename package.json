@@ -84,12 +84,14 @@
     }
   ],
   "asar": true,
-  "mac": {
-  "target": "dmg",
-  "arch": [
-    "universal"
+ "mac": {
+  "target": [
+    {
+      "target": "dmg",
+      "arch": ["universal"]
+    }
   ]
-  },
+},
   "win": {
     "target": [
       "nsis"
