@@ -22,19 +22,19 @@ jobs:
           node-version: '18'
 
       - name: Install Root Dependencies
-        run: npm install
+        run: CI='' npm install
 
       - name: Install Frontend Dependencies
         working-directory: frontend
-        run: npm install
+        run: CI='' npm install
 
       - name: Build Frontend (React)
         working-directory: frontend
-        run: npm run build
+        run: CI='' npm run build
 
       - name: Install Backend Dependencies
         working-directory: backend
-        run: npm install 
+        run: CI='' npm install 
 
       - name: Download binaries (Node, ADB, etc.)
         run: |
@@ -44,4 +44,4 @@ jobs:
       - name: Build and Publish App
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm run build
+        run: CI='' npm run build
