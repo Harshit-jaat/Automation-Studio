@@ -5,6 +5,7 @@ const axios = require("axios");
 const { initWebSocket } = require("./websocket/wsServer");
 const { startAppium, stopAppium } = require("./config/appiumstarter");
 const cors = require("cors");
+const {getConnectedDevice} = require("./config/devicesutils");
 
 
 const PORT = 4000;
@@ -51,6 +52,7 @@ const server = app.listen(PORT, '0.0.0.0', () => {
 
   // Start WebSocket
   initWebSocket(server);
+  getConnectedDevice();
 });
 
 // Graceful Shutdown

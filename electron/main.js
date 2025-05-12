@@ -109,9 +109,64 @@ function createWindow() {
 }
 
 
+// async function startBackend() {
+//   const backendScript = path.join(process.resourcesPath, "backend", "server.js");
+//   const nodePath = path.join(process.resourcesPath, "node", "mac", "bin", "node");
+
+//   if (!fs.existsSync(backendScript)) {
+//     await dialog.showErrorBox("Missing backend", "server.js not found.");
+//     return;
+//   }
+
+//   if (!fs.existsSync(nodePath)) {
+//     await dialog.showErrorBox("Missing Node.js", "Node binary not found.");
+//     return;
+//   }
+
+//   fs.appendFileSync(logFile, `[STARTING BACKEND] ${nodePath} ${backendScript}\n`);
+
+// backendProcess = spawn(nodePath, [backendScript], {
+//   cwd: path.dirname(backendScript),
+//   stdio: 'inherit',
+//   env: {
+//     ...process.env,
+//     PATH: `${path.dirname(nodePath)}:${process.env.PATH}`
+//   }
+// });
+
+//   let backendReady = false;
+
+//   backendProcess.on("exit", (code, signal) => {
+//   let message = `❌ Backend exited early.\nCode: ${code}\nSignal: ${signal}`;
+//   if (lastBackendError) {
+//     message += `\n\nError: ${lastBackendError}`;
+//   }
+//   // dialog.showErrorBox("Backend Error", message);
+// });
+
+//   backendProcess.on("error", (err) => {
+//   lastBackendError = err.message;
+//   console.error(`❌ Failed to spawn backend: ${err.message}`);
+//   dialog.showErrorBox("Spawn Error", err.message);
+// });
+
+
+//   const ready = await waitForBackendReady("http://localhost:4000/api/healthcheck");
+//   if (ready) {
+//     backendReady = true;
+//     await dialog.showMessageBox({
+//       type: "info",
+//       title: "Backend Started",
+//       message: "✅ Backend server is up and running!",
+//     });
+//   } else {
+//     dialog.showErrorBox("Backend Error", `❌ Healthcheck failed. Check terminal logs.`);
+//   }
+// }
+
 async function startBackend() {
   const backendScript = path.join(process.resourcesPath, "backend", "server.js");
-  const nodePath = path.join(process.resourcesPath, "node", "mac", "bin", "node");
+  const nodePath = getNodeBinaryPath();
 
   if (!fs.existsSync(backendScript)) {
     await dialog.showErrorBox("Missing backend", "server.js not found.");
@@ -123,44 +178,43 @@ async function startBackend() {
     return;
   }
 
-  fs.appendFileSync(logFile, `[STARTING BACKEND] ${nodePath} ${backendScript}\n`);
+  const startProcess = () => {
+    fs.appendFileSync(logFile, `[STARTING BACKEND] ${nodePath} ${backendScript}\n`);
 
-backendProcess = spawn(nodePath, [backendScript], {
-  cwd: path.dirname(backendScript),
-  stdio: 'inherit',
-  env: {
-    ...process.env,
-    PATH: `${path.dirname(nodePath)}:${process.env.PATH}`
-  }
-});
-
-  let backendReady = false;
-
-  backendProcess.on("exit", (code, signal) => {
-  let message = `❌ Backend exited early.\nCode: ${code}\nSignal: ${signal}`;
-  if (lastBackendError) {
-    message += `\n\nError: ${lastBackendError}`;
-  }
-  // dialog.showErrorBox("Backend Error", message);
-});
-
-  backendProcess.on("error", (err) => {
-  lastBackendError = err.message;
-  console.error(`❌ Failed to spawn backend: ${err.message}`);
-  dialog.showErrorBox("Spawn Error", err.message);
-});
-
-
-  const ready = await waitForBackendReady("http://localhost:4000/api/healthcheck");
-  if (ready) {
-    backendReady = true;
-    await dialog.showMessageBox({
-      type: "info",
-      title: "Backend Started",
-      message: "✅ Backend server is up and running!",
+    backendProcess = spawn(nodePath, [backendScript], {
+      cwd: path.dirname(backendScript),
+      stdio: 'inherit',
+      env: {
+        ...process.env,
+        PATH: `${path.dirname(nodePath)}:${process.env.PATH}`,
+      }
     });
+
+    backendProcess.on("exit", (code, signal) => {
+      console.warn(`❌ Backend crashed. Code: ${code}, Signal: ${signal}`);
+      lastBackendError = `Code: ${code}, Signal: ${signal}`;
+      notifyStatus("Backend crashed. Restarting...");
+
+      // Wait a bit and restart
+      setTimeout(() => {
+        startProcess();
+      }, 2000);
+    });
+
+    backendProcess.on("error", (err) => {
+      lastBackendError = err.message;
+      console.error(`❌ Failed to spawn backend: ${err.message}`);
+      dialog.showErrorBox("Spawn Error", err.message);
+    });
+  };
+
+  startProcess();
+
+  const ready = await waitForBackendReady("http://localhost:4000/api/healthcheck", 10, 1000);
+  if (ready) {
+    notifyStatus("✅ Backend started.");
   } else {
-    dialog.showErrorBox("Backend Error", `❌ Healthcheck failed. Check terminal logs.`);
+    notifyStatus("❌ Backend health check failed.");
   }
 }
 
