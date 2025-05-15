@@ -15,7 +15,7 @@ async function home_bottom_bar_clicks() {
     // await disablePlayStore();
 
   try {
-    await click("ALLOW",{delay: 10000 , print : true});
+    await click("ALLOWww",{delay: 3000 , print : true});
     await click(intro.letsgo,{ print : true});
     await click(role.student,{print:true});
     clickContinue();
@@ -28,6 +28,8 @@ async function home_bottom_bar_clicks() {
     await enablePlayStore();
   } catch (error) {
     console.error(error);
+    console.log(error);
+    process.exit(1);
   } finally {
     await quitDriver();
     // await enablePlayStore();

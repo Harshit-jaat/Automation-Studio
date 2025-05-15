@@ -1,8 +1,46 @@
 const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
+const { spawnSync, execSync } = require("child_process");
+const { getADBPath, getConnectedDevice } = require("../../config/devicesutils");
 
 const TRACES_FILE = "/data/anr/traces.txt";
+function collectLogcatErrors() {
+  try {
+    const adbPath = getADBPath();
+    const deviceId = getConnectedDevice();
+    if (!deviceId) throw new Error("No connected device");
+
+    const result = spawnSync(adbPath, [
+      "-s", deviceId,
+      "logcat",
+      "-d",
+      "-b", "main",
+      "-b", "crash",
+      "-b", "system"
+    ], {
+      encoding: "utf-8"
+    });
+
+    if (result.error) throw result.error;
+
+    const lines = result.stdout.split("\n");
+
+    // Strict filter: only ' E ' lines
+    const errorLines = lines.filter((line) =>
+      line.includes(" E ") && line.includes("com.binogi")
+    );
+
+    return errorLines.join("\n") || "No error-level logs found for com.binogi.";
+
+  } catch (err) {
+    console.error("❌ Failed to collect logcat errors:", err.message);
+    return `Logcat collection failed: ${err.message}`;
+  }
+}
+
+
+
 
 function pullTracesFile(callback) {
   exec(`adb pull ${TRACES_FILE}`, (err, stdout, stderr) => {
@@ -34,4 +72,6 @@ function checkANRFromFileAndSave(filePath, packageName, testName) {
 module.exports = {
   pullTracesFile,
   checkANRFromFileAndSave,
+  collectLogcatErrors,
+
 };

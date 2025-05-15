@@ -90,7 +90,7 @@ function createWindow() {
 
     mainWindow.loadURL(loadURL)
       .then(() => {
-        // mainWindow.webContents.openDevTools();
+        mainWindow.webContents.openDevTools();
         console.log("✅ Main window loaded.");
 
         resolve(); 

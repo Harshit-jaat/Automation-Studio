@@ -5,10 +5,10 @@
   "description": "Automation Studio Desktop App",
   "author": "Harshit",
   "scripts": {
-    "start": "concurrently \"npm run frontend\" \"npm run electron\"",
+    "start": "concurrently \"npm run frontend\" \"npm run electron\" \"npm run backend\"",
     "frontend": "cd frontend && npm start",
     "electron": "electron electron/main.js",
-    "backend": "node backend/server.js",
+    "backend": "nodemon backend/server.js",
     "build": "electron-builder --publish always"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "find-process": "^1.4.10",
     "mime-types": "^3.0.1",
     "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.10",
     "webdriverio": "^9.12.0",
     "websocket": "^1.0.35"
   },
@@ -30,93 +31,98 @@
     "electron-builder": "^26.0.12"
   },
   "build": {
-  "appId": "com.testing.studio",
-  "productName": "Testing Studio",
-  "icon": "electron/assets/icon.icns",
-  "directories": {
-    "output": "dist"
-  },
-  "files": [
-    "electron/main.js",
-    "frontend/build/**/*",
-    "electron/bin/**/*",
-    "!**/*.un~",
-    "!**/.git",
-    "!**/.DS_Store",
-    "!**/node_modules/parse-listing/**"
-  ],
-  "extraResources": [
-    {
-      "from": "backend",
-      "to": "backend"
+    "appId": "com.testing.studio",
+    "productName": "Testing Studio",
+    "icon": "electron/assets/icon.icns",
+    "directories": {
+      "output": "dist"
     },
-    {
-      "from": "backend/node_modules",
-      "to": "backend/node_modules"
+    "files": [
+      "electron/main.js",
+      "frontend/build/**/*",
+      "electron/bin/**/*",
+      "!**/*.un~",
+      "!**/.git",
+      "!**/.DS_Store",
+      "!**/node_modules/parse-listing/**"
+    ],
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend"
+      },
+      {
+        "from": "backend/node_modules",
+        "to": "backend/node_modules"
+      },
+      {
+        "from": "frontend/build",
+        "to": "frontend"
+      },
+      {
+        "from": "electron/bin/mac/node/bin/node",
+        "to": "node/mac/bin/node"
+      },
+      {
+        "from": "electron/bin/win/node/node.exe",
+        "to": "node/win/node.exe"
+      },
+      {
+        "from": "electron/bin/linux/node/bin/node",
+        "to": "node/linux/bin/node"
+      },
+      {
+        "from": "electron/bin/mac/platform-tools",
+        "to": "backend/bin/mac/platform-tools"
+      },
+      {
+        "from": "electron/bin/win/platform-tools",
+        "to": "backend/bin/win/platform-tools"
+      },
+      {
+        "from": "electron/bin/linux/platform-tools",
+        "to": "backend/bin/linux/platform-tools"
+      }
+    ],
+    "asar": true,
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
     },
-    {
-      "from": "frontend/build",
-      "to": "frontend"
+    "win": {
+      "target": [
+        "nsis"
+      ]
     },
-    {
-      "from": "electron/bin/mac/node/bin/node",
-      "to": "node/mac/bin/node"
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
     },
-    {
-      "from": "electron/bin/win/node/node.exe",
-      "to": "node/win/node.exe"
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     },
-    {
-      "from": "electron/bin/linux/node/bin/node",
-      "to": "node/linux/bin/node"
-    },
-    {
-      "from": "electron/bin/mac/platform-tools",
-      "to": "backend/bin/mac/platform-tools"
-    },
-    {
-      "from": "electron/bin/win/platform-tools",
-      "to": "backend/bin/win/platform-tools"
-    },
-    {
-      "from": "electron/bin/linux/platform-tools",
-      "to": "backend/bin/linux/platform-tools"
-    }
-  ],
-  "asar": true,
- "mac": {
-  "target": [
-    {
-      "target": "dmg",
-      "arch": ["x64", "arm64"]
-    },
-    {
-      "target": "zip",
-      "arch": ["x64", "arm64"]
-    }
-  ]
-},
-  "win": {
-    "target": [
-      "nsis"
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Harshit-jaat",
+        "repo": "Automation-Studio"
+      }
     ]
-  },
-  "linux": {
-    "target": [
-      "AppImage"
-    ]
-  },
-  "nsis": {
-    "oneClick": false,
-    "allowToChangeInstallationDirectory": true
-  },
-  "publish": [
-    {
-      "provider": "github",
-      "owner": "Harshit-jaat",
-      "repo": "Automation-Studio"
-    }
-  ]
-}
-
+  }
 }

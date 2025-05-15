@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "../styles/testcases.module.css";
 import Select from "react-select";
+import { saveAs } from "file-saver";
+
 
 const backendUrl = "http://localhost:4000";
 
@@ -15,6 +17,8 @@ export default function TestCases() {
   const [isRunning, setIsRunning] = useState(false);
   const wsBuffer = useRef([]);
   const stopped = useRef(false);
+  const [currentSessionId, setCurrentSessionId] = useState(null);
+
 
   useEffect(() => {
     axios.get(`${backendUrl}/api/testcases`).then((res) => {
@@ -35,28 +39,60 @@ export default function TestCases() {
     return () => socket.close();
   }, []);
 
-  const runTests = async () => {
-    if (selected.length === 0) return alert("Select at least 1 test");
-    setLogs("");
-    setIsRunning(true);
-    stopped.current = false;
-
-    for (const script of selected) {
-      if (stopped.current) {
-        setLogs((prev) => prev + "\n⛔ Test execution stopped by user.");
-        break;
+  const downloadPDF = async () => {
+  try {
+    const response = await axios.get(
+      `${backendUrl}/test/history/${encodeURIComponent(currentSessionId)}/pdf`,
+      {
+        responseType: "blob", 
       }
+    );
 
-      setLogs((prev) => prev + `\n▶ Starting test: ${script}`);
-      wsBuffer.current = [];
+    const blob = new Blob([response.data], { type: "application/pdf" });
+    saveAs(blob, `${currentSessionId}.pdf`);
+  } catch (err) {
+    alert("❌ Failed to download PDF: " + err.message);
+    console.error("Download error", err);
+  }
+};
 
-      await axios.post(`${backendUrl}/test/start`, { script });
-      await waitForTestEnd();
+
+  const runTests = async () => {
+  if (selected.length === 0) return alert("Select at least 1 test");
+
+  const sessionId = generateReadableSessionId();
+  setCurrentSessionId(sessionId); 
+  await axios.post(`${backendUrl}/test/start-session`, { sessionId });
+
+  setLogs("");
+  setIsRunning(true);
+  stopped.current = false;
+
+  for (const script of selected) {
+    if (stopped.current) {
+      setLogs((prev) => prev + "\n⛔ Test execution stopped by user.");
+      break;
     }
 
-    setIsRunning(false);
-    setLogs((prev) => prev + "\n✅ All tests finished!");
-  };
+    setLogs((prev) => prev + `\n▶ Starting test: ${script}`);
+    wsBuffer.current = [];
+
+    const lastTestInLoop = script === selected[selected.length - 1];
+
+    await axios.post(`${backendUrl}/test/start`, {
+      script,
+      sessionId,
+      lastTestInLoop: script === selected[selected.length - 1]
+    });
+
+
+    await waitForTestEnd();
+  }
+
+  setIsRunning(false);
+  setLogs((prev) => prev + "\n✅ All tests finished!");
+};
+
 
   const waitForTestEnd = () => {
     return new Promise((resolve) => {
@@ -79,11 +115,31 @@ export default function TestCases() {
   const clearLogs = () => {
     setLogs("");
   };
+  const generateReadableSessionId = () => {
+    const now = new Date();
+    const pad = (n) => String(n).padStart(2, "0");
+
+    const year = now.getFullYear();
+    const month = pad(now.getMonth() + 1);
+    const day = pad(now.getDate());
+
+    let hours = now.getHours();
+    const minutes = pad(now.getMinutes());
+    const seconds = pad(now.getSeconds());
+    const ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+
+    const formattedTime = `${pad(hours)}-${minutes}-${seconds}-${ampm}`;
+    return `session-${year}-${month}-${day}_${formattedTime}`;
+  };
+
+
 
   const testCaseOptions = testCases.map(test => ({
     value: test.script,
     label: test.name
   }));
+
 
   return (
     <div className={styles.container}>
@@ -113,9 +169,20 @@ export default function TestCases() {
           <div className={styles.logsHeader}>
             📜 Live Logs
             <button onClick={clearLogs} className={styles.clearBtn}>🧹 Clear</button>
+            
           </div>
           <pre className={styles.logsBox}>{logs}</pre>
+             {currentSessionId && !isRunning && (
+                <button
+                onClick={downloadPDF}
+                className={styles.downloadBtn}
+              >
+                📄 Download PDF Report
+              </button>
+              )}
+
         </div>
+
       </div>
     </div>
   );

@@ -22,9 +22,9 @@ async function click(textObjectOrString, { language = "en", delay = 100, print =
 
   const tiers = [
     { retries: 5, delay: 0 },
-    { retries: 5, delay: 500 },
-    { retries: 5, delay: 1000 },
-    { retries: 2, delay: 5000 },
+    { retries: 5, delay: 500 }
+    // { retries: 5, delay: 1000 },
+    // { retries: 2, delay: 5000 },
   ];
 
   for (const tier of tiers) {
@@ -33,7 +33,7 @@ async function click(textObjectOrString, { language = "en", delay = 100, print =
         const el = await driver.$(`android=new UiSelector().text("${finalText}")`);
         if (await el.isDisplayed()) {
           await el.click();
-          if (print) console.log(`✅ Clicked element with exact text "${finalText}"`);
+          if (print) console.log(`✅ Clicked element with "${finalText}"`);
           return;
         }
       } catch {}
@@ -42,7 +42,7 @@ async function click(textObjectOrString, { language = "en", delay = 100, print =
         const el = await driver.$(`android=new UiSelector().textContains("${finalText}")`);
         if (await el.isDisplayed()) {
           await el.click();
-          if (print) console.log(`✅ Clicked element containing text "${finalText}"`);
+          if (print) console.log(`✅ Clicked element "${finalText}"`);
           return;
         }
       } catch {}
@@ -51,8 +51,9 @@ async function click(textObjectOrString, { language = "en", delay = 100, print =
     }
   }
 
-  console.error(`❌ Element with text "${finalText}" not found or not clickable after all retries`);
-  throw new Error(`Element with text "${finalText}" not found.`);
+  console.log(`❌ Element with  "${finalText}" is not found on screen`);
+  
+  throw new Error(`❌ Element with text "${finalText}" not found.`);
 }
 
 // --- Shortcuts ---
