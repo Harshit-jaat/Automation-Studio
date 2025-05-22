@@ -24,7 +24,7 @@ function startSession(id) {
     startTime: new Date().toISOString(),
     deviceInfo: null,
     testResults: []
-
+    
   };
 }
 

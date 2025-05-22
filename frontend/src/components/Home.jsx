@@ -64,12 +64,7 @@ export default function Home() {
 
     <div className="container">
       <h2>📱 Binogi Test Automation</h2>
-      {deviceName && deviceModel && (
-        <div className="apk-info">
-          <p><strong>Device Name:</strong> {deviceName}</p>
-          <p><strong>Device Model:</strong> {deviceModel}</p>
-        </div>
-      )}
+      
 
       {apk && (
         <div className="apk-info">
