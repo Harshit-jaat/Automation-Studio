@@ -1,0 +1,26 @@
+{
+  "sessionId": "session-2025-05-16_12-10-23-PM",
+  "startTime": "2025-05-16T06:40:23.899Z",
+  "deviceInfo": {
+    "brand": "samsung",
+    "model": "SM-A032F",
+    "androidId": "9311dc2ff54eda8b",
+    "platformVersion": "12",
+    "apiVersion": "31",
+    "locale": "en-IN",
+    "displayDensity": 320,
+    "screenSize": "720x1600",
+    "timeZone": "Asia/Calcutta"
+  },
+  "testResults": [
+    {
+      "testName": "testnew",
+      "scriptPath": "tests/binogi/testcases/home/testnew.js",
+      "status": "failed",
+      "logs": "✅ Connected device ID: R9ZTB02FBKW\n❌ Element with  \"ALLOWww\" is not found on screen",
+      "logcatErrors": "05-15 16:18:32.730  3713  3795 E AndroidRuntime: Process: com.binogi, PID: 3713\n05-15 16:19:21.162  4239  4323 E AndroidRuntime: Process: com.binogi, PID: 4239\n05-15 16:26:54.536  4707  4788 E AndroidRuntime: Process: com.binogi, PID: 4707\n05-15 16:29:05.545  5222  5303 E AndroidRuntime: Process: com.binogi, PID: 5222\n05-15 16:33:05.525  5798  5880 E AndroidRuntime: Process: com.binogi, PID: 5798\n05-15 16:47:00.100  5910  6154 E AndroidRuntime: Process: com.binogi, PID: 5910\n05-15 17:23:29.818  7040  7134 E AndroidRuntime: Process: com.binogi, PID: 7040\n05-15 17:26:29.083  8133  8213 E AndroidRuntime: Process: com.binogi, PID: 8133\n05-15 17:33:57.408  8686  8772 E AndroidRuntime: Process: com.binogi, PID: 8686\n05-15 17:42:10.829  9657  9739 E AndroidRuntime: Process: com.binogi, PID: 9657\n05-15 17:46:21.126 10183 10273 E AndroidRuntime: Process: com.binogi, PID: 10183\n05-15 17:50:43.969 10734 10815 E AndroidRuntime: Process: com.binogi, PID: 10734\n05-15 17:54:42.658 11212 11295 E AndroidRuntime: Process: com.binogi, PID: 11212\n05-15 17:56:00.901 11679 11763 E AndroidRuntime: Process: com.binogi, PID: 11679\n05-15 18:01:25.724 12114 12194 E AndroidRuntime: Process: com.binogi, PID: 12114\n05-15 18:04:12.341 12753 12842 E AndroidRuntime: Process: com.binogi, PID: 12753\n05-15 18:07:45.988 13270 13355 E AndroidRuntime: Process: com.binogi, PID: 13270\n05-15 18:10:37.813 13856 13951 E AndroidRuntime: Process: com.binogi, PID: 13856\n05-15 18:11:45.648 14384 14468 E AndroidRuntime: Process: com.binogi, PID: 14384\n05-15 18:14:16.494 14790 14873 E AndroidRuntime: Process: com.binogi, PID: 14790\n05-15 18:16:09.008 15284 15366 E AndroidRuntime: Process: com.binogi, PID: 15284\n05-15 18:18:51.365 15695 15776 E AndroidRuntime: Process: com.binogi, PID: 15695\n05-16 12:08:34.680   868  3013 E PackageManager: android.content.pm.PackageManager$NameNotFoundException: Package com.binogi unavailable\n05-16 12:08:44.296   868   958 E VerityUtils: Failed to measure fs-verity, errno 1: /data/app/~~eAK3X61EDBa4iurU5ZOnNA==/com.binogi-W_YO9xtKWGy4ajr5T5Xe4w==/base.apk\n05-16 12:08:52.382   868   932 E WindowManager: win=Window{8d95607 u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true win.mViewVisibility=8 caller=com.android.server.wm.ActivityRecord.destroySurfaces:5194 com.android.server.wm.ActivityRecord.destroySurfaces:5175 com.android.server.wm.WindowState.onExitAnimationDone:5106 com.android.server.wm.WindowStateAnimator.onAnimationFinished:208 com.android.server.wm.WindowState.onAnimationFinished:5354 com.android.server.wm.WindowContainer$$ExternalSyntheticLambda0.onAnimationFinished:2 com.android.server.wm.SurfaceAnimator.lambda$getFinishedCallback$0$SurfaceAnimator:112 \n05-16 12:10:29.361   868   932 E WindowManager: win=Window{6c4be48 u0 com.binogi/com.binogi.MainActivity EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true win.mViewVisibility=0 caller=com.android.server.wm.ActivityRecord.destroySurfaces:5194 com.android.server.wm.ActivityRecord.destroySurfaces:5175 com.android.server.wm.WindowState.onExitAnimationDone:5106 com.android.server.wm.WindowStateAnimator.onAnimationFinished:208 com.android.server.wm.WindowState.onAnimationFinished:5354 com.android.server.wm.WindowContainer$$ExternalSyntheticLambda0.onAnimationFinished:2 com.android.server.wm.SurfaceAnimator.lambda$getFinishedCallback$0$SurfaceAnimator:112 \n05-16 12:10:37.630   868   932 E WindowManager: win=Window{8ea4c6a u0 Splash Screen com.binogi EXITING} destroySurfaces: appStopped=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true win.mViewVisibility=8 caller=com.android.server.wm.ActivityRecord.destroySurfaces:5194 com.android.server.wm.ActivityRecord.destroySurfaces:5175 com.android.server.wm.WindowState.onExitAnimationDone:5106 com.android.server.wm.WindowStateAnimator.onAnimationFinished:208 com.android.server.wm.WindowState.onAnimationFinished:5354 com.android.server.wm.WindowContainer$$ExternalSyntheticLambda0.onAnimationFinished:2 com.android.server.wm.SurfaceAnimator.lambda$getFinishedCallback$0$SurfaceAnimator:112 \n05-16 12:10:39.196   377   638 E com.binogi: Invalid ID 0x00000000."
+    }
+  ],
+  "endTime": "2025-05-16T06:40:51.348Z",
+  "duration": "27.449s"
+}

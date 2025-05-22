@@ -11,7 +11,6 @@ const UPLOADS_DIR = isProduction
   : path.join(__dirname, "../uploads");
 
 function getADBPath() {
-  console.log("iiiiiiiiii",isProduction);
   const platform = os.platform();
 
   const basePath = isProduction
@@ -64,8 +63,6 @@ function getConnectedDevice() {
     const output = execSync(`"${adbPath}" devices`).toString();
     const lines = output.split("\n").filter((line) => line.includes("\tdevice"));
 
-    console.log("🔎 Filtered device lines:", lines);
-
     if (lines.length === 0) throw new Error("❌ No Android device connected");
 
     const deviceId = lines[0].split("\t")[0];
@@ -73,9 +70,37 @@ function getConnectedDevice() {
     return deviceId;
   } catch (err) {
     console.error("❌ Failed to get connected device:", err.message);
-    return null;
+    return err.message;
   }
 }
+
+function saveDeviceInfoToJSON(info) {
+  const filePath = path.join(__dirname, "../data/deviceDetails.json");
+
+  let existing = [];
+  if (fs.existsSync(filePath)) {
+    try {
+      const raw = fs.readFileSync(filePath, "utf-8");
+      existing = JSON.parse(raw);
+    } catch (err) {
+      console.warn("⚠️ Failed to parse existing device info. Overwriting...");
+    }
+  }
+
+
+  const alreadyExists = existing.find(
+    (e) => e.androidId === info.androidId || e.deviceId === info.deviceId
+  );
+
+  if (!alreadyExists) {
+    existing.push(info);
+    fs.writeFileSync(filePath, JSON.stringify(existing, null, 2));
+
+  } else {
+    console.log("Device info already exists, skipping save.");
+  }
+}
+
 
 function getDeviceInfoViaADB() {
   try {
@@ -84,7 +109,7 @@ function getDeviceInfoViaADB() {
     if (!deviceId) throw new Error("No device connected");
 
     const props = execSync(`"${adbPath}" -s ${deviceId} shell getprop`).toString();
-    
+
     const parseProp = (key) => {
       const line = props.split("\n").find(line => line.includes(`[${key}]`));
       return line ? line.split("]: [")[1]?.replace("]", "") : null;
@@ -107,12 +132,60 @@ function getDeviceInfoViaADB() {
   }
 }
 
+function getConnectedDeviceModal() {
+  try {
+    const adbPath = getADBPath();
+    const output = execSync(`"${adbPath}" devices`).toString();
+    const lines = output.split("\n").filter((line) => line.includes("\tdevice"));
+
+    if (lines.length === 0) throw new Error("❌ No Android device connected");
+
+    const deviceId = lines[0].split("\t")[0];
+    console.log("✅ Connected device ID:", deviceId);
+
+    const devicesFile = path.join(__dirname, "../data/devices.json");
+    let devices = [];
+
+    if (fs.existsSync(devicesFile)) {
+      const data = fs.readFileSync(devicesFile, "utf-8");
+      devices = JSON.parse(data);
+    }
+
+    const matchedDevice = devices.find((d) => d.ID === deviceId);
+    const model = matchedDevice ? matchedDevice.name : "Unknown Model";
+
+    return { deviceId, model };
+  } catch (err) {
+    console.error("❌ Failed to get connected device:", err.message);
+    return { error: err.message };
+  }
+}
+
+function captureAndSaveDeviceInfo() {
+  const device = getConnectedDeviceModal(); 
+  const info = getDeviceInfoViaADB(); 
+
+  if (!device || device.error || !info) {
+    console.error("❌ Unable to capture device info.");
+    return;
+  }
+
+  const deviceInfoToSave = {
+    ...info,
+    deviceId: device.deviceId,
+    customName: device.model 
+  };
+
+  saveDeviceInfoToJSON(deviceInfoToSave);
+}
+
 
 module.exports = {
   getConnectedDevice,
   getLatestAPK,
   getDeviceInfoViaADB,
   getADBPath,
-  
-  
+  getConnectedDeviceModal,
+  captureAndSaveDeviceInfo,
+
 };

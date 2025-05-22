@@ -18,11 +18,18 @@ export default function TestCases() {
   const wsBuffer = useRef([]);
   const stopped = useRef(false);
   const [currentSessionId, setCurrentSessionId] = useState(null);
+  const [deviceName, setDeviceName] = useState("");
+  const [deviceModel, setDeviceModel] = useState("");
+  let deviceInfoBlock = null;
+
 
 
   useEffect(() => {
     axios.get(`${backendUrl}/api/testcases`).then((res) => {
       setTestCases(res.data.testCases);
+      setDeviceModel(res.data.deviceInfo.model);
+      setDeviceName(res.data.deviceInfo.deviceId);
+
     });
 
     const socket = new WebSocket(`ws://localhost:4000`);
@@ -40,58 +47,58 @@ export default function TestCases() {
   }, []);
 
   const downloadPDF = async () => {
-  try {
-    const response = await axios.get(
-      `${backendUrl}/test/history/${encodeURIComponent(currentSessionId)}/pdf`,
-      {
-        responseType: "blob", 
-      }
-    );
+    try {
+      const response = await axios.get(
+        `${backendUrl}/test/history/${encodeURIComponent(currentSessionId)}/pdf`,
+        {
+          responseType: "blob",
+        }
+      );
 
-    const blob = new Blob([response.data], { type: "application/pdf" });
-    saveAs(blob, `${currentSessionId}.pdf`);
-  } catch (err) {
-    alert("❌ Failed to download PDF: " + err.message);
-    console.error("Download error", err);
-  }
-};
+      const blob = new Blob([response.data], { type: "application/pdf" });
+      saveAs(blob, `${currentSessionId}.pdf`);
+    } catch (err) {
+      alert("❌ Failed to download PDF: " + err.message);
+      console.error("Download error", err);
+    }
+  };
 
 
   const runTests = async () => {
-  if (selected.length === 0) return alert("Select at least 1 test");
+    if (selected.length === 0) return alert("Select at least 1 test");
 
-  const sessionId = generateReadableSessionId();
-  setCurrentSessionId(sessionId); 
-  await axios.post(`${backendUrl}/test/start-session`, { sessionId });
+    const sessionId = generateReadableSessionId();
+    setCurrentSessionId(sessionId);
+    await axios.post(`${backendUrl}/test/start-session`, { sessionId });
 
-  setLogs("");
-  setIsRunning(true);
-  stopped.current = false;
+    setLogs("");
+    setIsRunning(true);
+    stopped.current = false;
 
-  for (const script of selected) {
-    if (stopped.current) {
-      setLogs((prev) => prev + "\n⛔ Test execution stopped by user.");
-      break;
+    for (const script of selected) {
+      if (stopped.current) {
+        setLogs((prev) => prev + "\n⛔ Test execution stopped by user.");
+        break;
+      }
+
+      setLogs((prev) => prev + `\n▶ Starting test: ${script}`);
+      wsBuffer.current = [];
+
+      const lastTestInLoop = script === selected[selected.length - 1];
+
+      await axios.post(`${backendUrl}/test/start`, {
+        script,
+        sessionId,
+        lastTestInLoop: script === selected[selected.length - 1]
+      });
+
+
+      await waitForTestEnd();
     }
 
-    setLogs((prev) => prev + `\n▶ Starting test: ${script}`);
-    wsBuffer.current = [];
-
-    const lastTestInLoop = script === selected[selected.length - 1];
-
-    await axios.post(`${backendUrl}/test/start`, {
-      script,
-      sessionId,
-      lastTestInLoop: script === selected[selected.length - 1]
-    });
-
-
-    await waitForTestEnd();
-  }
-
-  setIsRunning(false);
-  setLogs((prev) => prev + "\n✅ All tests finished!");
-};
+    setIsRunning(false);
+    setLogs((prev) => prev + "\n✅ All tests finished!");
+  };
 
 
   const waitForTestEnd = () => {
@@ -140,13 +147,30 @@ export default function TestCases() {
     label: test.name
   }));
 
+if (deviceName && deviceModel) {
+  deviceInfoBlock = (
+    <div className="apk-info">
+      <p><strong>Device Name:</strong> {deviceName}</p>
+      <p><strong>Device Model:</strong> {deviceModel}</p>
+    </div>
+  );
+} else if (!deviceName) {
+  deviceInfoBlock = (
+<p style={{ color: "red" , paddingLeft:"10%"}}>No Device is Connected Please connect one device first and reload the page</p>
+
+  );
+
+}
+
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-      <Link to="/" className={styles.backButton}>⬅ Back to Home</Link>
+        <Link to="/" className={styles.backButton}>⬅ Back to Home</Link>
         <h2 className={styles.heading}>🧪 Test Case Manager</h2>
       </div>
+
+     {deviceInfoBlock}
 
       <div className={styles.layout}>
         <div className={styles.selector}>
@@ -169,17 +193,17 @@ export default function TestCases() {
           <div className={styles.logsHeader}>
             📜 Live Logs
             <button onClick={clearLogs} className={styles.clearBtn}>🧹 Clear</button>
-            
+
           </div>
           <pre className={styles.logsBox}>{logs}</pre>
-             {currentSessionId && !isRunning && (
-                <button
-                onClick={downloadPDF}
-                className={styles.downloadBtn}
-              >
-                📄 Download PDF Report
-              </button>
-              )}
+          {currentSessionId && !isRunning && (
+            <button
+              onClick={downloadPDF}
+              className={styles.downloadBtn}
+            >
+              📄 Download PDF Report
+            </button>
+          )}
 
         </div>
 

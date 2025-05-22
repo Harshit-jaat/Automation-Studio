@@ -24,6 +24,7 @@ app.use("/upload", require("./routes/upload"));
 app.use("/test", require("./routes/test"));
 app.use("/api", require("./routes/translation"));
 app.use("/api/testcases", require("./routes/testcases"));
+app.use("/api/adb",require("./routes/adb-devices"));
 
 app.get("/", (req, res) => {
   res.json({ success: true, message: "Automation Studio backend running" });

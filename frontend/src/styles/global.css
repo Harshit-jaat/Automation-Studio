@@ -20,6 +20,22 @@ body {
   text-align: center;
 }
 
+.apk-info {
+  background-color: #eef6fc;
+  border: 1px solid #cce0f5;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: #34495e;
+}
+
+.apk-info p {
+  margin: 4px 0;
+}
+
+
 h2 {
   font-size: 26px;
   font-weight: 600;
